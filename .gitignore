@@ -1,0 +1,14 @@
+node_modules
+.DS_Store
+dist
+.cache
+.temp
+.env
+.env.*
+!.env.example
+
+# VitePress generated files
+docs/.vitepress/cache
+docs/.vitepress/dist
+docs/.vitepress/.temp
+*.log

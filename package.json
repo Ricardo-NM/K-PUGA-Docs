@@ -1,0 +1,15 @@
+{
+  "name": "k-puga-docs",
+  "version": "1.0.0",
+  "private": false,
+  "description": "Documentacion publica de arquitectura y proposito del sistema K-PUGA.",
+  "type": "module",
+  "scripts": {
+    "docs:dev": "vitepress dev docs",
+    "docs:build": "vitepress build docs",
+    "docs:preview": "vitepress preview docs"
+  },
+  "devDependencies": {
+    "vitepress": "^1.6.3"
+  }
+}
