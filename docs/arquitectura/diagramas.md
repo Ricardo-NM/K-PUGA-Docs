@@ -15,7 +15,7 @@ flowchart LR
   S <--> F
 ```
 
-## Autenticacion y autorizacion
+## Autenticación y autorización
 
 ```mermaid
 sequenceDiagram
@@ -51,7 +51,7 @@ flowchart TD
   D --> H
 ```
 
-## Comunicacion en tiempo real
+## Comunicación en tiempo real
 
 ```mermaid
 sequenceDiagram
@@ -65,4 +65,19 @@ sequenceDiagram
   FrontendA->>TiempoReal: Publica evento autenticado
   TiempoReal->>FrontendB: Entrega evento a destinatarios autorizados
   FrontendB->>UsuarioB: Muestra notificacion o actualizacion
+```
+
+## Despliegue productivo
+
+```mermaid
+flowchart TD
+  D[Dominio kpuga.tech] --> N[Nginx con HTTPS]
+  N --> F[Frontend estatico]
+  N --> A[Backend Node.js administrado por PM2]
+  A --> DB[(SQL Server 2022)]
+  A --> FS[Gestion de archivos]
+  A <--> WS[Socket.IO]
+  FW[UFW] --> N
+  FW --> A
+  FW --> DB
 ```

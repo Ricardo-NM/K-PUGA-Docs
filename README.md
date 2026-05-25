@@ -1,21 +1,27 @@
-# K-PUGA Docs
+# KPUGA - ERP Documentación
 
-Repositorio publico de documentacion para K-PUGA, un sistema privado de gestion operativa y administrativa para procesos logisticos, documentales y de seguimiento interno.
+Repositorio público de documentación para KPUGA - ERP, un sistema privado de gestión operativa y administrativa para procesos logísticos, documentales y de seguimiento interno.
 
-> Este repositorio no contiene codigo fuente del sistema privado.
+> Este repositorio no contiene código fuente del sistema privado.
 
-## Proposito
+## Propósito
 
-Este espacio permite revisar de forma publica el proposito, arquitectura general, tecnologias, modulos funcionales, practicas de seguridad y metodologia de trabajo de K-PUGA sin exponer propiedad intelectual, credenciales, datos reales, consultas, rutas internas sensibles ni implementacion del producto.
+Este espacio permite revisar de forma publica el propósito, arquitectura general, tecnologías, módulos funcionales, prácticas de seguridad y metodología de trabajo de KPUGA - ERP sin exponer propiedad intelectual, credenciales, datos reales, consultas, rutas internas sensibles ni implementación del producto.
 
 ## Contenido
 
 - Arquitectura general del sistema.
-- Stack tecnologico utilizado.
-- Modulos principales y responsabilidades.
+- Stack tecnológico utilizado.
+- Módulos principales y responsabilidades.
 - Controles de seguridad y privacidad.
-- Metodologia de desarrollo y documentacion.
+- Metodología de desarrollo y documentación.
 - Diagramas sanitizados en Mermaid.
+
+## Infraestructura y despliegue
+
+La documentación publica incluye una vista sanitizada del entorno productivo: VPS Hostinger con Ubuntu, Nginx, PM2, SQL Server, dominio privado, HTTPS con Let's Encrypt, UFW y Socket.IO.
+
+No se publican IPs, credenciales, llaves SSH, cadenas de conexión, rutas privadas completas ni configuración exacta de firewall.
 
 ## Desarrollo local
 
@@ -30,10 +36,10 @@ Para compilar el sitio:
 npm run docs:build
 ```
 
-## Politica de divulgacion
+## Política de divulgación
 
-No se aceptan contribuciones que incluyan codigo fuente privado, secretos, cadenas de conexion, variables `.env`, datos de clientes, capturas con informacion real, consultas SQL, endpoints completos o detalles internos explotables.
+No se aceptan contribuciones que incluyan código fuente privado, secretos, cadenas de conexión, variables `.env`, datos de clientes, capturas con información real, consultas SQL, endpoints completos o detalles internos explotables.
 
 ## Licencia
 
-La documentacion esta publicada bajo CC BY-NC 4.0. El sistema K-PUGA, su codigo fuente, base de datos, marca, reglas de negocio e implementacion permanecen privados.
+La documentación esta publicada bajo CC BY-NC 4.0. El sistema K-PUGA, su código fuente, base de datos, marca, reglas de negocio e implementación permanecen privados.

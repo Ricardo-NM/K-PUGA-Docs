@@ -1,29 +1,39 @@
 # Seguridad y privacidad
 
-La documentacion publica de K-PUGA se limita a controles y practicas generales. Los detalles de implementacion permanecen privados.
+La documentación publica de KPUGA - ERP se limita a controles y practicas generales. Los detalles de implementación permanecen privados.
 
 ## Controles principales
 
-- Autenticacion basada en sesion/token para proteger recursos del sistema.
-- Cookies y configuracion de origenes permitidos para controlar interacciones entre frontend y backend.
-- Autorizacion por roles y permisos antes de mostrar vistas o ejecutar acciones protegidas.
-- Validacion de solicitudes para reducir errores y entradas inesperadas.
-- Limitacion de solicitudes en operaciones sensibles.
+- Autenticación basada en sesión/token para proteger recursos del sistema.
+- Cookies y configuración de orígenes permitidos para controlar interacciones entre frontend y backend.
+- Autorización por roles y permisos antes de mostrar vistas o ejecutar acciones protegidas.
+- Validación de solicitudes para reducir errores y entradas inesperadas.
+- Limitación de solicitudes en operaciones sensibles.
 - Cabeceras de seguridad web mediante middleware especializado.
 - Manejo centralizado de errores para responder de forma consistente.
 - Idempotencia en operaciones donde se busca evitar duplicidad por reintentos.
-- Separacion entre informacion publica documentada e implementacion privada.
+- Separación entre información publica documentada e implementación privada.
 
-## Informacion excluida de este repositorio
+## Información excluida de este repositorio
 
-- Codigo fuente privado.
+- Código fuente privado.
 - Variables de entorno o archivos `.env`.
-- Secretos, tokens, credenciales o cadenas de conexion.
+- Secretos, tokens, credenciales o cadenas de conexión.
 - Consultas SQL, nombres de tablas o modelos internos.
 - Endpoints completos o reglas internas explotables.
 - Datos reales de usuarios, clientes u operaciones.
 - Capturas de pantalla sin anonimizar.
 
-## Revision publica segura
+## Revisión publica segura
 
-Las contribuciones deben enfocarse en claridad, arquitectura, documentacion, riesgos generales y buenas practicas. Cualquier hallazgo que implique informacion sensible debe reportarse sin reproducir el dato en publico.
+Las contribuciones deben enfocarse en claridad, arquitectura, documentación, riesgos generales y buenas prácticas. Cualquier hallazgo que implique información sensible debe reportarse sin reproducir el dato en público.
+
+## Seguridad de infraestructura
+
+- El acceso administrativo al VPS se realiza mediante SSH con llaves, sin publicar llaves ni usuarios internos.
+- UFW controla los puertos necesarios para administración, tráfico web, backend y servicios internos.
+- El dominio público apunta al VPS mediante DNS, mientras Nginx fuerza HTTPS con certificados Let's Encrypt.
+- La base de datos productiva usa SQL Server Authentication con credenciales privadas fuera del repositorio.
+- Los puertos de administración y base de datos deben mantenerse restringidos por IP, VPN o una política equivalente.
+- Nginx opera como proxy inverso, sirve el frontend compilado y soporta WebSockets mediante cabeceras de upgrade.
+- PM2 mantiene el backend disponible y permite reinicios controlados sin exponer detalles internos del proceso.

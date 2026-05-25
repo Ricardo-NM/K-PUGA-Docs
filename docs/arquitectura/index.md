@@ -1,30 +1,38 @@
 # Arquitectura general
 
-K-PUGA esta organizado como una aplicacion web con separacion clara entre interfaz, API, persistencia, servicios de soporte y comunicacion en tiempo real.
+KPUGA - ERP está organizado como una aplicación web con separación clara entre interfaz, API, persistencia, servicios de soporte y comunicación en tiempo real.
 
 ## Stack principal
 
-| Capa | Tecnologia | Uso publico documentado |
-| --- | --- | --- |
-| Frontend | React, Vite, Tailwind CSS | Interfaz por roles, componentes reutilizables y navegacion modular. |
-| Backend | Node.js, Express | API central para autenticacion, reglas de acceso y operaciones del sistema. |
-| Base de datos | SQL Server | Persistencia transaccional de entidades operativas y administrativas. |
-| Cache/soporte | Redis | Soporte para limitacion, idempotencia o procesos auxiliares. |
-| Tiempo real | Socket.IO | Chat, presencia, notificaciones y avisos de nueva version. |
-| Seguridad | JWT, cookies, Helmet, CORS, rate limiting, validacion | Control de acceso y proteccion basica de superficie web. |
-| Documentos | Generacion y gestion de archivos | Flujos documentales y paquetes de informacion operativa. |
+| Capa          | Tecnología                                            | Uso público documentado                                                     |
+| ------------- | ----------------------------------------------------- | --------------------------------------------------------------------------- |
+| Frontend      | React, Vite, Tailwind CSS                             | Interfaz por roles, componentes reutilizables y navegación modular.         |
+| Backend       | Node.js, Express                                      | API central para autenticación, reglas de acceso y operaciones del sistema. |
+| Base de datos | SQL Server                                            | Persistencia transaccional de entidades operativas y administrativas.       |
+| Cache/soporte | Redis                                                 | Soporte para limitación, idempotencia o procesos auxiliares.                |
+| Tiempo real   | Socket.IO                                             | Chat, presencia, notificaciones y avisos de nueva versión.                  |
+| Seguridad     | JWT, cookies, Helmet, CORS, rate limiting, validación | Control de acceso y protección básica de superficie web.                    |
+| Documentos    | Generación y gestión de archivos                      | Flujos documentales y paquetes de información operativa.                    |
 
-## Principios de diseno
+## Principios de diseño
 
-- Separacion entre frontend y backend para mantener responsabilidades claras.
+- Separación entre frontend y backend para mantener responsabilidades claras.
 - Acceso segmentado por roles y permisos.
-- Modulos funcionales agrupados por dominio de negocio.
-- Validacion y controles de seguridad antes de ejecutar operaciones protegidas.
-- Comunicacion en tiempo real solo para experiencias que lo requieren.
-- Documentacion publica limitada a conceptos, no a implementacion privada.
+- Módulos funcionales agrupados por dominio de negocio.
+- Validación y controles de seguridad antes de ejecutar operaciones protegidas.
+- Comunicación en tiempo real solo para experiencias que lo requieren.
+- Documentación publica limitada a conceptos, no a implementación privada.
 
 ## Vista de alto nivel
 
-El frontend consume una API protegida. El backend coordina autenticacion, permisos, procesos de negocio, archivos, persistencia y eventos en tiempo real. La base de datos y los servicios auxiliares permanecen fuera del alcance publico.
+El frontend consume una API protegida. El backend coordina autenticación, permisos, procesos de negocio, archivos, persistencia y eventos en tiempo real. La base de datos y los servicios auxiliares permanecen fuera del alcance público.
 
-Ver tambien: [diagramas sanitizados](./diagramas.md).
+Ver también: [diagramas sanitizados](./diagramas.md).
+
+## Infraestructura de despliegue
+
+El despliegue productivo se apoya en un VPS con Ubuntu, Nginx como servidor web y proxy inverso, PM2 para mantener el backend Node.js activo, SQL Server como motor de base de datos y certificados Let's Encrypt para HTTPS.
+
+La configuración publica se documenta por componentes y propósito, sin incluir IPs, credenciales, llaves SSH, cadenas de conexión, rutas privadas completas ni reglas exactas de firewall.
+
+Ver también: [infraestructura y despliegue](../infraestructura/).

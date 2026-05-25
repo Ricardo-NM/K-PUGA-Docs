@@ -1,27 +1,20 @@
-# Metodologia de trabajo
+# Metodología de trabajo
 
-K-PUGA se documenta publicamente con una estrategia de separacion: el sistema privado conserva codigo e implementacion, mientras este repositorio describe decisiones, estructura y proposito de manera revisable.
+KPUGA - ERP se documenta públicamente con una estrategia de separación: el sistema privado conserva código e implementación, mientras este repositorio describe decisiones, estructura y propósito de manera revisable.
 
 ## Criterios de desarrollo
 
 - Modularizar por dominios funcionales y responsabilidades del usuario.
-- Reutilizar componentes visuales y patrones de navegacion donde sea posible.
-- Mantener separacion entre presentacion, API, permisos, persistencia y servicios auxiliares.
+- Reutilizar componentes visuales y patrones de navegación donde sea posible.
+- Mantener separación entre presentación, API, permisos, persistencia y servicios auxiliares.
 - Validar entradas y permisos antes de ejecutar operaciones protegidas.
-- Registrar flujos importantes mediante documentacion y diagramas de alto nivel.
+- Registrar flujos importantes mediante documentación y diagramas de alto nivel.
 - Favorecer cambios incrementales que puedan revisarse y probarse por modulo.
 
-## Documentacion publica
+## Documentación publica
 
-Cada pagina debe responder tres preguntas:
+Cada página debe responder tres preguntas:
 
-1. Que problema resuelve esta parte del sistema.
-2. Que tecnologias o patrones intervienen.
-3. Que limites de divulgacion se deben respetar.
-
-## Criterios para aceptar cambios
-
-- El contenido debe ser comprensible para un lector tecnico externo.
-- No debe revelar secretos, datos reales ni implementacion privada.
-- Los diagramas deben ser abstractos y sanitizados.
-- Las descripciones deben hablar de capacidades y responsabilidades, no de codigo interno.
+1. Qué problema resuelve esta parte del sistema.
+2. Que tecnologías o patrones intervienen.
+3. Que límites de divulgación se deben respetar.
