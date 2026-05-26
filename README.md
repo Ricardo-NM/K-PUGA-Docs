@@ -4,6 +4,8 @@ Repositorio público de documentación para KPUGA - ERP, un sistema privado de g
 
 > Este repositorio no contiene código fuente del sistema privado.
 
+Documentación técnica disponible en: https://ricardo-nm.github.io/K-PUGA-Docs/
+
 ## Propósito
 
 Este espacio permite revisar de forma publica el propósito, arquitectura general, tecnologías, módulos funcionales, prácticas de seguridad y metodología de trabajo de KPUGA - ERP sin exponer propiedad intelectual, credenciales, datos reales, consultas, rutas internas sensibles ni implementación del producto.
