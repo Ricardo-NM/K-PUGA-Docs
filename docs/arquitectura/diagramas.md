@@ -71,7 +71,7 @@ sequenceDiagram
 
 ```mermaid
 flowchart TD
-  D[Dominio kpuga.tech] --> N[Nginx con HTTPS]
+  D[Dominio público] --> N[Nginx con HTTPS]
   N --> F[Frontend estatico]
   N --> A[Backend Node.js administrado por PM2]
   A --> DB[(SQL Server 2022)]

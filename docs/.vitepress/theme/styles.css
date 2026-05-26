@@ -1,0 +1,66 @@
+.mermaid-diagram {
+  margin: 24px 0;
+  overflow-x: auto;
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 8px;
+  padding: 16px;
+  background: var(--vp-c-bg-soft);
+}
+
+.mermaid-diagram svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 0 auto;
+}
+
+html.dark .mermaid-diagram svg text,
+html.dark .mermaid-diagram svg .messageText,
+html.dark .mermaid-diagram svg .loopText,
+html.dark .mermaid-diagram svg .labelText,
+html.dark .mermaid-diagram svg .actor,
+html.dark .mermaid-diagram svg .nodeLabel,
+html.dark .mermaid-diagram svg .edgeLabel,
+html.dark .mermaid-diagram svg .edgeLabel p {
+  color: var(--vp-c-text-1) !important;
+  fill: var(--vp-c-text-1) !important;
+}
+
+html.dark .mermaid-diagram svg .messageLine0,
+html.dark .mermaid-diagram svg .messageLine1,
+html.dark .mermaid-diagram svg .flowchart-link,
+html.dark .mermaid-diagram svg .transition,
+html.dark .mermaid-diagram svg marker path {
+  stroke: var(--vp-c-text-2) !important;
+}
+
+html.dark .mermaid-diagram svg .labelBkg,
+html.dark .mermaid-diagram svg .edgeLabel,
+html.dark .mermaid-diagram svg .cluster-label,
+html.dark .mermaid-diagram svg .label {
+  background-color: var(--vp-c-bg-soft) !important;
+}
+
+html.dark .mermaid-diagram svg rect.actor {
+  fill: #0f172a !important;
+  stroke: #60a5fa !important;
+}
+
+html.dark .mermaid-diagram svg text.actor {
+  fill: #f8fafc !important;
+}
+
+html:not(.dark) .mermaid-diagram svg rect.actor {
+  fill: #eff6ff !important;
+  stroke: #2563eb !important;
+}
+
+html:not(.dark) .mermaid-diagram svg text.actor {
+  fill: #111827 !important;
+}
+
+.mermaid-error {
+  margin: 0;
+  color: var(--vp-c-danger-1);
+  font-size: 14px;
+}

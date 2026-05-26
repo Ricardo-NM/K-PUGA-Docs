@@ -1,3 +1,4 @@
+import { Buffer } from "node:buffer";
 import { defineConfig } from "vitepress";
 
 const isGitHubActions = process.env.GITHUB_ACTIONS === "true";
@@ -9,6 +10,26 @@ export default defineConfig({
   base: isGitHubActions ? "/K-PUGA-Docs/" : "/",
   cleanUrls: true,
   srcDir: ".",
+  markdown: {
+    config(md) {
+      const defaultFence =
+        md.renderer.rules.fence?.bind(md.renderer.rules) ||
+        ((tokens, idx, options, env, slf) =>
+          slf.renderToken(tokens, idx, options));
+
+      md.renderer.rules.fence = (tokens, idx, options, env, slf) => {
+        const token = tokens[idx];
+        const language = token.info.trim().split(/\s+/)[0];
+
+        if (language === "mermaid") {
+          const graph = Buffer.from(token.content, "utf8").toString("base64");
+          return `<MermaidDiagram graph="${graph}" />\n`;
+        }
+
+        return defaultFence(tokens, idx, options, env, slf);
+      };
+    },
+  },
   themeConfig: {
     logo: "/logo.ico",
     nav: [
